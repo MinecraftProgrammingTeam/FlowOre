@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "mixing_stone",
+  "version": "${version}",
+  "name": "MixingStone",
+  "description": "",
+  "authors": [
+    "youm"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "top.mpt.mixingstone.MixingStone"
+    ]
+  },
+  "mixins": [
+    "MixingStone.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.10",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}
