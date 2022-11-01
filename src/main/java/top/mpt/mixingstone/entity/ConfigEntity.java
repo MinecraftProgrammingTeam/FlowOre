@@ -1,4 +1,4 @@
-package top.mpt.mixingstone.utils;
+package top.mpt.mixingstone.entity;
 
 import java.util.Objects;
 

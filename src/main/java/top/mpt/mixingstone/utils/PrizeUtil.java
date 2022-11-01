@@ -3,6 +3,7 @@ package top.mpt.mixingstone.utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import top.mpt.mixingstone.MixingStone;
+import top.mpt.mixingstone.entity.PrizeEntity;
 
 import java.util.*;
 

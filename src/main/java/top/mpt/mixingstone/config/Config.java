@@ -3,14 +3,13 @@ package top.mpt.mixingstone.config;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import top.mpt.mixingstone.MixingStone;
-import top.mpt.mixingstone.utils.ConfigEntity;
-import top.mpt.mixingstone.utils.PrizeEntity;
+import top.mpt.mixingstone.entity.ConfigEntity;
+import top.mpt.mixingstone.entity.PrizeEntity;
 
 import java.io.File;
 import java.io.IOException;
