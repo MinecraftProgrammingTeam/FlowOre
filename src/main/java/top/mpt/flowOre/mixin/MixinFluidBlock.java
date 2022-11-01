@@ -1,4 +1,4 @@
-package top.mpt.mixingstone.mixin;
+package top.mpt.flowOre.mixin;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -9,13 +9,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import top.mpt.mixingstone.MixingStone;
-import top.mpt.mixingstone.config.AbstractConfig;
-import top.mpt.mixingstone.config.configs.ConfigFile;
-import top.mpt.mixingstone.utils.PrizeUtil;
+import top.mpt.flowOre.FlowOre;
+import top.mpt.flowOre.config.AbstractConfig;
+import top.mpt.flowOre.config.configs.ConfigFile;
+import top.mpt.flowOre.utils.PrizeUtil;
 
 import java.util.List;
-
+/**
+ * @author : YouM
+ */
 @Mixin(FluidBlock.class)
 public class MixinFluidBlock {
 
@@ -34,9 +36,9 @@ public class MixinFluidBlock {
             )
     )
     private void receiveNeighborFluids(World world, BlockPos pos, BlockState state, CallbackInfoReturnable<Boolean> cir){
-        AbstractConfig config = MixingStone.config.getFileByClass(ConfigFile.class);
+        AbstractConfig config = FlowOre.config.getFileByClass(ConfigFile.class);
         if(config instanceof ConfigFile c){
-            world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : MixingStone.prizeUtil.getBlockByPrize(c.getPrizeEntities()).getDefaultState());
+            world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : FlowOre.prizeUtil.getBlockByPrize(c.getPrizeEntities()).getDefaultState());
         }
     }
 }

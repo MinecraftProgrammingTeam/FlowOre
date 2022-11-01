@@ -1,27 +1,18 @@
-package top.mpt.mixingstone.entity;
-
-import net.minecraft.block.Block;
+package top.mpt.flowOre.entity;
 
 import java.util.Objects;
-import java.util.Random;
-
-public class PrizeEntity {
-    private Block key;
+/**
+ * @author : YouM
+ */
+public class ConfigEntity {
+    private String key;
     private Double poll;
 
-    public PrizeEntity() {
-    }
-
-    public PrizeEntity(Block key, Double poll) {
-        this.key = key;
-        this.poll = poll;
-    }
-
-    public Block getKey() {
+    public String getKey() {
         return key;
     }
 
-    public void setKey(Block key) {
+    public void setKey(String key) {
         this.key = key;
     }
 
@@ -33,11 +24,16 @@ public class PrizeEntity {
         this.poll = poll;
     }
 
+    public ConfigEntity(String key, Double poll) {
+        this.key = key;
+        this.poll = poll;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PrizeEntity that = (PrizeEntity) o;
+        ConfigEntity that = (ConfigEntity) o;
         return Objects.equals(key, that.key) && Objects.equals(poll, that.poll);
     }
 
@@ -48,11 +44,9 @@ public class PrizeEntity {
 
     @Override
     public String toString() {
-        return "PrizeEntity{" +
-                "key=" + key +
+        return "ConfigEntity{" +
+                "key='" + key + '\'' +
                 ", poll=" + poll +
                 '}';
     }
-
-    public static Random Rand = new Random();
 }

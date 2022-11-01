@@ -1,11 +1,13 @@
-package top.mpt.mixingstone.config;
+package top.mpt.flowOre.config;
 
-import top.mpt.mixingstone.config.configs.ConfigFile;
-import top.mpt.mixingstone.config.configs.ReadMeFile;
+import top.mpt.flowOre.config.configs.ConfigFile;
+import top.mpt.flowOre.config.configs.ReadMeFile;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author : YouM
+ */
 public class ConfigManager {
     private List<AbstractConfig> configs;
     public void load(){

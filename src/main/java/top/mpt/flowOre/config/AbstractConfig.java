@@ -1,4 +1,4 @@
-package top.mpt.mixingstone.config;
+package top.mpt.flowOre.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,7 +8,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
-
+/**
+ * @author : YouM
+ */
 public abstract class AbstractConfig {
     protected String filename;
     protected File file;

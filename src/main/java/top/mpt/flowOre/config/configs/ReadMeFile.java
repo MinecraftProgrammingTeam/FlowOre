@@ -1,11 +1,13 @@
-package top.mpt.mixingstone.config.configs;
+package top.mpt.flowOre.config.configs;
 
 import org.apache.commons.io.FileUtils;
-import top.mpt.mixingstone.config.AbstractConfig;
+import top.mpt.flowOre.config.AbstractConfig;
 
 import java.io.IOException;
 
-
+/**
+ * @author : YouM
+ */
 public class ReadMeFile extends AbstractConfig {
 
     public ReadMeFile() {

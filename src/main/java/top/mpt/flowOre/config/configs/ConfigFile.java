@@ -1,18 +1,20 @@
-package top.mpt.mixingstone.config.configs;
+package top.mpt.flowOre.config.configs;
 
 import com.google.common.reflect.TypeToken;
 import net.minecraft.block.Blocks;
 import org.apache.commons.io.FileUtils;
-import top.mpt.mixingstone.MixingStone;
-import top.mpt.mixingstone.config.AbstractConfig;
-import top.mpt.mixingstone.entity.ConfigEntity;
-import top.mpt.mixingstone.entity.PrizeEntity;
+import top.mpt.flowOre.FlowOre;
+import top.mpt.flowOre.config.AbstractConfig;
+import top.mpt.flowOre.entity.ConfigEntity;
+import top.mpt.flowOre.entity.PrizeEntity;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author : YouM
+ */
 public class ConfigFile extends AbstractConfig {
     //存储 PrizeEntity 的 List
     private final List<ConfigEntity> configEntities;
@@ -41,7 +43,7 @@ public class ConfigFile extends AbstractConfig {
     @Override
     public void readConfig() throws IOException {
         String configContent = FileUtils.readFileToString(this.file,"UTF-8");
-        MixingStone.log.info(configContent);
+        FlowOre.log.info(configContent);
         Type type = new TypeToken<List<ConfigEntity>>(){}.getType();//这里要获取泛型的内容，要不然Gson无法识别
         List<ConfigEntity> config = gson.fromJson(configContent, type);
         for(ConfigEntity entity : config){

@@ -1,13 +1,15 @@
-package top.mpt.mixingstone.utils;
+package top.mpt.flowOre.utils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import top.mpt.mixingstone.MixingStone;
-import top.mpt.mixingstone.entity.PrizeEntity;
+import top.mpt.flowOre.FlowOre;
+import top.mpt.flowOre.entity.PrizeEntity;
 
 import java.util.*;
 
-//@SuppressWarnings("all")
+/**
+ * @author : YouM
+ */
 public class PrizeUtil {
 
     /**
@@ -25,7 +27,7 @@ public class PrizeUtil {
         for (PrizeEntity p : prizes){
             total += p.getPoll();
         }
-        MixingStone.log.info(String.valueOf(total));
+        FlowOre.log.info(String.valueOf(total));
         //添加total个数 用来对总共的数进行数量分布
         for (int i = 0; i < total; i++) speed.add(i);
         for (PrizeEntity prizeList : prizes)
@@ -45,7 +47,7 @@ public class PrizeUtil {
                 speed.remove(pos); //移除已抽取的箱子索引号
             }
         }
-        MixingStone.log.info(box.toString());
+        FlowOre.log.info(box.toString());
         //最后返回
         return box.get(PrizeEntity.Rand.nextInt(total));
     }
