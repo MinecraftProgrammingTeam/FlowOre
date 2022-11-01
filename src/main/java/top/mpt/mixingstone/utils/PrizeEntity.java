@@ -54,5 +54,5 @@ public class PrizeEntity {
                 '}';
     }
 
-    public static Random Rand = new Random(System.currentTimeMillis());
+    public static Random Rand = new Random();
 }

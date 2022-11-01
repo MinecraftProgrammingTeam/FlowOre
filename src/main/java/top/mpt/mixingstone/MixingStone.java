@@ -13,8 +13,7 @@ public class MixingStone implements ModInitializer {
     @Override
     public void onInitialize() {
         config = new Config();
-        prizeUtil = new PrizeUtil(config.getPrizeEntities());
+        prizeUtil = new PrizeUtil();
         log.info("MixingStone loading...");
-
     }
 }

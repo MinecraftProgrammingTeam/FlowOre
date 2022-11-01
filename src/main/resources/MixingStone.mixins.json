@@ -7,7 +7,7 @@
 
   ],
   "client": [
-    "MinecraftLavaFluid"
+    "MixinFluidBlock"
   ],
   "injectors": {
     "defaultRequire": 1
