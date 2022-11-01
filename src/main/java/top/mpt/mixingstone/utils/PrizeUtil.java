@@ -16,7 +16,7 @@ public class PrizeUtil {
      * @return 返回 Block 对象 可能是矿石中的任意一个
      */
     public Block getBlockByPrize(List<PrizeEntity> prizes){
-        if(prizes.size() == 0) return Blocks.COPPER_ORE; //如果prizes的大小只有1就直接返回原石
+        if(prizes.size() == 0) return Blocks.COBBLESTONE; //如果prizes的大小只有1就直接返回原石
         List<Integer> speed = new ArrayList<>(); //随机种子
         Map<Integer, Block> box = new HashMap<>(); // 存储Block的盒子，Integer用来通过随机数随机获取Block
         int total = 0;//权重总共的数量

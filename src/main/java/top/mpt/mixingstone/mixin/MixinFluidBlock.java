@@ -10,6 +10,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import top.mpt.mixingstone.MixingStone;
+import top.mpt.mixingstone.config.AbstractConfig;
+import top.mpt.mixingstone.config.configs.ConfigFile;
 import top.mpt.mixingstone.utils.PrizeUtil;
 
 import java.util.List;
@@ -32,6 +34,9 @@ public class MixinFluidBlock {
             )
     )
     private void receiveNeighborFluids(World world, BlockPos pos, BlockState state, CallbackInfoReturnable<Boolean> cir){
-        world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : MixingStone.prizeUtil.getBlockByPrize(MixingStone.config.getPrizeEntities()).getDefaultState());
+        AbstractConfig config = MixingStone.config.getFileByClass(ConfigFile.class);
+        if(config instanceof ConfigFile c){
+            world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : MixingStone.prizeUtil.getBlockByPrize(c.getPrizeEntities()).getDefaultState());
+        }
     }
 }
