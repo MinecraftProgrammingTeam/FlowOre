@@ -11,7 +11,7 @@ import java.util.*;
 public class PrizeUtil {
 
     /**
-     * 转盘权重随机数算法 ,时间复杂度O(n^3) ，十分弱智的算法，会优化的，但是对矿石的产生只有平均300ms的延迟
+     * 权重随机数算法 ,时间复杂度O(n^3) ，十分弱智的算法，会优化的，但是对矿石的产生只有平均300ms的延迟
      * @param prizes 从config获取的List对象内部存储Block对象和权重
      * @return 返回 Block 对象 可能是矿石中的任意一个
      */
