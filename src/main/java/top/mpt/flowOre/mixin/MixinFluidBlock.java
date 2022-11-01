@@ -25,7 +25,7 @@ public class MixinFluidBlock {
      *  通过 {@link Inject} 注入到 <br/>
      *  {@link FluidBlock#receiveNeighborFluids(World,BlockPos,BlockState)}方法中的 <br/>
      *  "world.setBlockState(pos, block.getDefaultState());"<br/>
-     *  将其更改为{@link PrizeUtil#getBlockByPrize(List)}的返回值<br/>
+     *  将其更改为{@link PrizeUtil#getBlockByPrize()}的返回值<br/>
      */
     @Inject(
             method = "receiveNeighborFluids",
@@ -36,9 +36,6 @@ public class MixinFluidBlock {
             )
     )
     private void receiveNeighborFluids(World world, BlockPos pos, BlockState state, CallbackInfoReturnable<Boolean> cir){
-        AbstractConfig config = FlowOre.config.getFileByClass(ConfigFile.class);
-        if(config instanceof ConfigFile c){
-            world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : FlowOre.prizeUtil.getBlockByPrize(c.getPrizeEntities()).getDefaultState());
-        }
+        world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : FlowOre.prizeUtil.getBlockByPrize().getDefaultState());
     }
 }

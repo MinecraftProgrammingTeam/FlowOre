@@ -1,9 +1,12 @@
 package top.mpt.flowOre;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.block.Blocks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import top.mpt.flowOre.config.AbstractConfig;
 import top.mpt.flowOre.config.ConfigManager;
+import top.mpt.flowOre.config.configs.ConfigFile;
 import top.mpt.flowOre.utils.PrizeUtil;
 
 /**
@@ -20,7 +23,11 @@ public class FlowOre implements ModInitializer {
     public void onInitialize() {
         config = new ConfigManager();
         config.load();
-        prizeUtil = new PrizeUtil();
+        AbstractConfig config = FlowOre.config.getFileByClass(ConfigFile.class);
+        if(config instanceof ConfigFile c){
+            prizeUtil = new PrizeUtil(c.getPrizeEntities());
+            prizeUtil.init();
+        }
         log.info("{} loading... version: {} author: {} ",name,version,author);
     }
 }
