@@ -4,11 +4,10 @@
   "package": "top.mpt.flowOre.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "MixinFluidBlock",
     "MixinLavaFluid"
   ],
-  "client": [
-    "MixinFluidBlock"
-  ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   }

@@ -26,9 +26,13 @@ public class PrizeUtil {
     /**
      * @return 返回 Block 对象 可能是矿石中的任意一个
      */
+    public Block getBlockByPrizeStone(){
+        //最后返回
+        return flag ? box.get(PrizeEntity.Rand.nextInt(total)) : Blocks.STONE;
+    }
     public Block getBlockByPrize(){
         //最后返回
-        return flag ? box.get(PrizeEntity.Rand.nextInt(total)) :  Blocks.COBBLESTONE;
+        return flag ? box.get(PrizeEntity.Rand.nextInt(total)) : Blocks.COBBLESTONE;
     }
     /**
      * 权重随机数算法 ,时间复杂度O(n^3) ，十分弱智的算法，会优化的，但是对矿石的产生只有平均300ms的延迟

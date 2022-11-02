@@ -2,6 +2,7 @@ package top.mpt.flowOre.config.configs;
 
 import com.google.common.reflect.TypeToken;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.OreBlock;
 import net.minecraft.util.registry.Registry;
 import org.apache.commons.io.FileUtils;
@@ -33,9 +34,11 @@ public class ConfigFile extends AbstractConfig {
     public void init() {
         for(Block b : Registry.BLOCK){
             if(b instanceof OreBlock oreBlock){
-                configEntities.add(new ConfigEntity(Registry.BLOCK.getId(b).toString(),0.0));
+                configEntities.add(new ConfigEntity(Registry.BLOCK.getId(oreBlock).toString(),0.0));
             }
         }
+        configEntities.add(new ConfigEntity(Registry.BLOCK.getId(Blocks.COBBLESTONE).toString(),0.0));
+
 //        configEntities.add(new ConfigEntity(Registry.BLOCK.getId(Blocks.DIAMOND_ORE).toString(),0.0));
 //        configEntities.add(new ConfigEntity(Registry.BLOCK.getId(Blocks.COAL_ORE).toString(),0.0));
 //        configEntities.add(new ConfigEntity(Registry.BLOCK.getId(Blocks.GOLD_ORE).toString(),0.0));
@@ -57,10 +60,9 @@ public class ConfigFile extends AbstractConfig {
         for(ConfigEntity entity : config){
             if(entity.getPoll() < 0.0){//如果配置文件中有小于0.0的值，就直接返回,不存任何东西
                 return;
+            }else {
+                prizeEntities.add(new PrizeEntity(entity.getKey(),entity.getPoll()));
             }
-        }
-        for (ConfigEntity configEntity : config){
-            prizeEntities.add(new PrizeEntity(configEntity.getKey(),configEntity.getPoll()));
         }
 
     }

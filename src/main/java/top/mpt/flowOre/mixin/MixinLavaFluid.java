@@ -2,6 +2,7 @@ package top.mpt.flowOre.mixin;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.LavaFluid;
 import net.minecraft.util.math.BlockPos;
@@ -24,6 +25,6 @@ public class MixinLavaFluid {
             )
     )
     private void flow(WorldAccess world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState, CallbackInfo ci){
-        world.setBlockState(pos, FlowOre.prizeUtil.getBlockByPrize().getDefaultState(),Block.NOTIFY_ALL);
+        world.setBlockState(pos,FlowOre.prizeUtil.getBlockByPrizeStone().getDefaultState(),Block.NOTIFY_ALL);
     }
 }
