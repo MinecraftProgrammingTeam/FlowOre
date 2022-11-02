@@ -1,29 +1,27 @@
 package top.mpt.flowOre.entity;
 
-import net.minecraft.block.Block;
-
 import java.util.Objects;
 import java.util.Random;
 /**
  * @author : YouM
  */
 public class PrizeEntity {
-    private Block key;
+    private String key;
     private Double poll;
 
     public PrizeEntity() {
     }
 
-    public PrizeEntity(Block key, Double poll) {
+    public PrizeEntity(String key, Double poll) {
         this.key = key;
         this.poll = poll;
     }
 
-    public Block getKey() {
+    public String getKey() {
         return key;
     }
 
-    public void setKey(Block key) {
+    public void setKey(String key) {
         this.key = key;
     }
 

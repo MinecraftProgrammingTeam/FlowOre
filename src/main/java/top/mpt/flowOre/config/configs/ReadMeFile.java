@@ -30,7 +30,7 @@ public class ReadMeFile extends AbstractConfig {
             如果其他都是0，只有一个为其他数，那么将会只生成不是0的矿石,
             如果都为0,那么将只会生成原石。
             请勿填写负数(就算你填了，只要有一个是负数，我也只会生成原石)
-                                                ----mpt管理组
+                                                            ----mpt管理组
             """;
         FileUtils.writeStringToFile(this.file,content,"UTF-8");
     }

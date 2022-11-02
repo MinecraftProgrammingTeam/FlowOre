@@ -1,7 +1,6 @@
 package top.mpt.flowOre;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.block.Blocks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import top.mpt.flowOre.config.AbstractConfig;

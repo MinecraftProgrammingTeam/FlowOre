@@ -14,16 +14,13 @@ import java.io.IOException;
 public abstract class AbstractConfig {
     protected String filename;
     protected File file;
-    protected final Gson gson = new GsonBuilder().setPrettyPrinting().create();;
+    protected final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     //获取 .minecraft 路径
     protected File runDir= MinecraftClient.getInstance().runDirectory;
     //在 runDir 目录下 创建子目录
     protected File configDir = new File(runDir + "/MixingStone");
 
     public AbstractConfig(String filename) {
-        this.filename = filename;
-    }
-    public AbstractConfig() {
         this.filename = filename;
     }
     /**

@@ -10,11 +10,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import top.mpt.flowOre.FlowOre;
-import top.mpt.flowOre.config.AbstractConfig;
-import top.mpt.flowOre.config.configs.ConfigFile;
 import top.mpt.flowOre.utils.PrizeUtil;
 
-import java.util.List;
 /**
  * @author : YouM
  */
