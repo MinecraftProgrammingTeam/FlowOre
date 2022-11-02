@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import net.minecraft.client.MinecraftClient;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import top.mpt.flowOre.FlowOre;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public abstract class AbstractConfig {
     //获取 .minecraft 路径
     protected File runDir= MinecraftClient.getInstance().runDirectory;
     //在 runDir 目录下 创建子目录
-    protected File configDir = new File(runDir + "/MixingStone");
+    protected File configDir = new File(runDir + "/" + FlowOre.name);
 
     public AbstractConfig(String filename) {
         this.filename = filename;
