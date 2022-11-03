@@ -1,6 +1,5 @@
 package top.mpt.flowOre.mixin;
 
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -9,15 +8,14 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import top.mpt.flowOre.FlowOre;
 import top.mpt.flowOre.utils.PrizeUtil;
 
 /**
- * @author : YouM
+ * @author YouM
  */
 @Mixin(FluidBlock.class)
 public abstract class MixinFluidBlock extends Block {
@@ -30,7 +28,7 @@ public abstract class MixinFluidBlock extends Block {
      *  通过 {@link Redirect} 注入到 <br/>
      *  {@link FluidBlock#receiveNeighborFluids(World,BlockPos,BlockState)}方法中的 <br/>
      *  "   world.setBlockState(pos, block.getDefaultState());   "<br/>
-     *  将其更改为{@link PrizeUtil#getBlockByPrize()}的返回值<br/>
+     *  将其更改为{@link PrizeUtil#getBlockByPrize(boolean)}的返回值<br/>
      *  <br/>
      * 这里有一个弱智的问题, 原来使用{@link Inject}注解<br/>
      * 之后在注入的方法内调用{@link FluidState#isStill()}的返回值会一直为空<br/>
@@ -46,6 +44,6 @@ public abstract class MixinFluidBlock extends Block {
             )
     )
     private boolean receiveNeighborFluids(World world, BlockPos pos, BlockState state){
-        return world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : Blocks.COBBLESTONE.getDefaultState());
+        return world.setBlockState(pos, world.getFluidState(pos).isStill() ? Blocks.OBSIDIAN.getDefaultState() : FlowOre.prizeUtil.getBlockByPrize(false).getDefaultState());
     }
 }

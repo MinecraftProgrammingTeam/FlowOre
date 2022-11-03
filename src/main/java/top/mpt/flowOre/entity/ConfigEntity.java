@@ -2,7 +2,7 @@ package top.mpt.flowOre.entity;
 
 import java.util.Objects;
 /**
- * @author : YouM
+ * @author YouM
  */
 public class ConfigEntity {
     private String key;

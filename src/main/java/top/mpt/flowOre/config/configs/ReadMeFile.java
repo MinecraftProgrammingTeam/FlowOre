@@ -6,7 +6,7 @@ import top.mpt.flowOre.config.AbstractConfig;
 import java.io.IOException;
 
 /**
- * @author : YouM
+ * @author YouM
  */
 public class ReadMeFile extends AbstractConfig {
 

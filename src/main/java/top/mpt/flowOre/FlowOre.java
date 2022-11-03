@@ -9,12 +9,14 @@ import top.mpt.flowOre.config.configs.ConfigFile;
 import top.mpt.flowOre.utils.PrizeUtil;
 
 /**
- * @author : YouM
+ * <h1>FlowOre</h1>
+ * <h2>开发团队:MPT</h2>
+ * @author YouM
  */
 public class FlowOre implements ModInitializer {
     public static final String name = "FlowOre";
     public static final String version = "0.1";
-    public static final String author = "youm";
+    public static final String author = "YouM";
     public static ConfigManager config;
     public static Logger log = LoggerFactory.getLogger(FlowOre.class);
     public static PrizeUtil prizeUtil;

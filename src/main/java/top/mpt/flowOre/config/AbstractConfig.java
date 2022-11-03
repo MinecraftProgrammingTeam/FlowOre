@@ -10,7 +10,13 @@ import top.mpt.flowOre.FlowOre;
 import java.io.File;
 import java.io.IOException;
 /**
- * @author : YouM
+ * @author YouM
+ *
+ * 准确的说并不能算是AbstractConfig
+ * 而是AbstractFile
+ * 因为同时也借助此类创建了解释的文件
+ * 原因: json的规范尽量不要写注释,我也可以不按照他的规范走
+ *      但是既然用了别人的东西，还是要遵循以下别人的规则
  */
 public abstract class AbstractConfig {
     protected String filename;

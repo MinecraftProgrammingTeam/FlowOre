@@ -10,7 +10,7 @@ import top.mpt.flowOre.entity.PrizeEntity;
 import java.util.*;
 
 /**
- * @author : YouM
+ * @author YouM
  */
 public class PrizeUtil {
 
@@ -26,13 +26,9 @@ public class PrizeUtil {
     /**
      * @return 返回 Block 对象 可能是矿石中的任意一个
      */
-    public Block getBlockByPrizeStone(){
+    public Block getBlockByPrize(boolean isLava){
         //最后返回
-        return flag ? box.get(PrizeEntity.Rand.nextInt(total)) : Blocks.STONE;
-    }
-    public Block getBlockByPrize(){
-        //最后返回
-        return flag ? box.get(PrizeEntity.Rand.nextInt(total)) : Blocks.COBBLESTONE;
+        return flag ? box.get(PrizeEntity.Rand.nextInt(total)) : isLava ? Blocks.STONE : Blocks.COBBLESTONE;
     }
     /**
      * 权重随机数算法 ,时间复杂度O(n^3) ，十分弱智的算法，会优化的，但是对矿石的产生只有平均300ms的延迟
@@ -53,11 +49,11 @@ public class PrizeUtil {
 
         for (PrizeEntity prizeList : list)
         {
-            for (int c = 0; c < prizeList.getPoll(); c++) //权重越大所占的面积份数就越多
+            //权重越大所占的面积份数就越多
+            for (int c = 0; c < prizeList.getPoll(); c++)
             {
-
-                //这块要判断随机数获取的索引有是否为null，没有再加，有了就不能加了
                 index = PrizeEntity.Rand.nextInt(speed.size());
+                //这块要判断随机数获取的索引有是否为null，没有再加，有了就不能加了 速度比较慢,所以不建议poll的值太大
                 while (true){
                     if(box.get(speed.get(index)) == null){
                         box.computeIfAbsent(speed.get(index), k -> Registry.BLOCK.get(new Identifier(prizeList.getKey())));

@@ -13,9 +13,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.mpt.flowOre.FlowOre;
-
+/**
+ * @author YouM
+ */
 @Mixin(LavaFluid.class)
 public class MixinLavaFluid {
+    /**
+     * 这是岩浆与水生成石头的方法
+     */
     @Inject(
             method = "flow",
             at = @At(
@@ -25,6 +30,6 @@ public class MixinLavaFluid {
             )
     )
     private void flow(WorldAccess world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState, CallbackInfo ci){
-        world.setBlockState(pos,FlowOre.prizeUtil.getBlockByPrizeStone().getDefaultState(),Block.NOTIFY_ALL);
+        world.setBlockState(pos,FlowOre.prizeUtil.getBlockByPrize(true).getDefaultState(),Block.NOTIFY_ALL);
     }
 }

@@ -6,7 +6,7 @@ import top.mpt.flowOre.config.configs.ReadMeFile;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * @author : YouM
+ * @author YouM
  */
 public class ConfigManager {
     private List<AbstractConfig> configs;

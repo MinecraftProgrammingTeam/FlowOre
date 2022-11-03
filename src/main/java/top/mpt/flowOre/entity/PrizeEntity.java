@@ -3,7 +3,7 @@ package top.mpt.flowOre.entity;
 import java.util.Objects;
 import java.util.Random;
 /**
- * @author : YouM
+ * @author YouM
  */
 public class PrizeEntity {
     private String key;

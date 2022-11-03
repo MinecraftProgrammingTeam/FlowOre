@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * @author : YouM
+ * @author YouM
  */
 public class ConfigFile extends AbstractConfig {
     //存储 PrizeEntity 的 List
@@ -25,6 +25,7 @@ public class ConfigFile extends AbstractConfig {
     private final List<PrizeEntity> prizeEntities;
 
     public ConfigFile() {
+        //调用父类构造,用于创建文件 config.json
         super("config.json");
         configEntities = new ArrayList<>();
         prizeEntities = new ArrayList<>();
