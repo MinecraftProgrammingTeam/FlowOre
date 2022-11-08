@@ -2,7 +2,7 @@
 # FlowOre 
 ## 一个关于岩浆和水生成随机矿石的我的世界模组 
 ## 模组想法提供者: 咸鱼插歪 
-
+### 作者:MPT管理组
 ![github license](https://img.shields.io/badge/license-MIT-blue.svg)
 ![github star](https://badgen.net/github/stars/YOM667/FlowOre)
 
